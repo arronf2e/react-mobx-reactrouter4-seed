@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { observer, inject } from 'mobx-react';
 import { getQueryString } from '../utils';
 
 class Page2 extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         console.log('page2 did mounted');

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 
 @inject('common')
 @observer
@@ -58,6 +59,8 @@ class Page1 extends Component {
                 </button>
 
                 <Link to="/page2">page2</Link>
+
+                <Button type="primary">Button</Button>
 
             </div>
         )
