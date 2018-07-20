@@ -1,15 +1,13 @@
 import Loadable from 'react-loadable';
-import Loading from '../components/loading';
+import Loading from '../components/loading/index';
 import React from 'react';
 import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 
 import { getIEVersion } from '../utils';
 
-console.log();
-
 const load = (page) => {
     return Loadable({
-        loader: () => import(`../pages/${page}`),
+        loader: () => import(`../pages/${page}/index`),
         loading: Loading,
     });
 }

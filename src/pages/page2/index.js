@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getQueryString } from '../utils';
+import { getQueryString } from '../../utils';
 
 class Page2 extends Component {
 

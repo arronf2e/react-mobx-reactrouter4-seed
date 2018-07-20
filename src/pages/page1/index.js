@@ -34,7 +34,7 @@ class Page1 extends Component {
         return (
             <div>
 
-                <div>{common.user.name}</div>
+                <div className="username">{common.user.name}</div>
                 <div>{common.user.age}</div>
 
                 hello world, {common.name}
