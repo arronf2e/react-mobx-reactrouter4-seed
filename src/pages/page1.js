@@ -14,6 +14,12 @@ class Page1 extends Component {
 
     }
 
+    componentDidMount() {
+        console.log('page1 did mounted');
+
+        this.props.common.fetchData();
+    }
+
     handleInputChanage = (e) => {
         let { value } = e.target;
         this.setState({
@@ -33,6 +39,8 @@ class Page1 extends Component {
                 hello world, {common.name}
 
                 {common.todos.map(item => <p key={item.id}>{item.name}</p>)}
+
+                {common.gankData.map(item => <p key={item}>{item}</p>)}
 
                 <button onClick={() => common.changeName('steven')}>
                     changename

@@ -1,32 +1,40 @@
-import Bundle from './bundle';
+import Loadable from 'react-loadable';
+import Loading from '../components/loading';
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 
-const Page1 = (props) => (
-    <Bundle load={() => import('../pages/page1')}>
-        {(Page1) => <Page1 {...props}/>}
-    </Bundle>
-);
+import { getIEVersion } from '../utils';
 
-const Page2 = (props) => (
-    <Bundle load={() => import('../pages/page2')}>
-        {(Page2) => <Page2 {...props}/>}
-    </Bundle>
-);
+console.log();
+
+const load = (page) => {
+    return Loadable({
+        loader: () => import(`../pages/${page}`),
+        loading: Loading,
+    });
+}
+
+const LoadablePage1 = load('page1');   // test page
+const LoadablePage2 = load('page2');    // test page
+const LoadableNotsupport = load('notsupport');  // IE9以下浏览器不支持页面
+const LoadableLogin = load('login');   // 登录页
+
+const IEversion = getIEVersion();
+
+// IE9 使用 hashRouter
+const Router = IEversion && IEversion === 9 ? HashRouter : BrowserRouter;
 
 const Routers = () => (
     <Router>
         <div>
             <Switch>
-                <Route exact path="/" component={Page1}></Route>
-                <Route exact path="/page2" component={Page2}></Route>
+                <Route exact path="/login" component={LoadableLogin}></Route>
+                <Route exact path="/" component={LoadablePage1}></Route>
+                <Route exact path="/page2" component={LoadablePage2}></Route>
+                <Route exact path="/notsupport" component={LoadableNotsupport}></Route>
             </Switch>
         </div>
     </Router>
 )
 
 export default Routers;
-
-
-// IE9 使用 hashRouter
-// 提供IE9以下浏览器不支持页面
