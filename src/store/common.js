@@ -1,6 +1,6 @@
 import { observable, action } from "mobx";
 
-import axios from 'axios';
+import apis from '../apis';
 
 export default class Common {
 
@@ -36,8 +36,10 @@ export default class Common {
 
     @action
     async fetchData() {
-        if(this.gankData.length) return;
-        let result = await axios.get(' http://gank.io/api/today');
-        this.gankData = result.data.category;
+        try {
+            await apis.apiTest()
+        }catch(e) {
+
+        }
     }
 }
