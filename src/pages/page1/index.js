@@ -19,6 +19,8 @@ class Page1 extends Component {
         console.log('page1 did mounted');
 
         this.props.common.fetchData();
+
+        // this.props.history.push('/login')
     }
 
     handleInputChanage = (e) => {
@@ -29,7 +31,7 @@ class Page1 extends Component {
     }
 
     render() {
-        console.log(this.props)
+        console.log(this.props.history)
         const { common } = this.props;
         return (
             <div>

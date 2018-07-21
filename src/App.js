@@ -7,16 +7,23 @@ import Routers from './routes';
 
 import Store from './store';
 
+import ErrorBoundary from './components/errorboundary';
+
 const store = new Store();
 
 class App extends Component {
+
 	render() {
 		return (
-			<Provider {...store}>
-				<Routers />
-			</Provider>
+			<ErrorBoundary>
+				<Provider {...store}>
+					<Routers />
+				</Provider>
+			</ErrorBoundary>
+
 		);
 	}
+
 }
 
 export default App;

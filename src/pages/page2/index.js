@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getQueryString } from '../../utils';
 
 class Page2 extends Component {
 
@@ -8,7 +7,6 @@ class Page2 extends Component {
     }
 
     render() {
-        console.log(this.props, getQueryString('name'))
         return (
             <div>
                 <p>hello page2</p>
