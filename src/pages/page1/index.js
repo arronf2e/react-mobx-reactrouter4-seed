@@ -34,7 +34,7 @@ class Page1 extends Component {
         console.log(this.props.history)
         const { common } = this.props;
         return (
-            <div>
+            <div className="page1">
 
                 <div className="username">{common.user.name}</div>
                 <div>{common.user.age}</div>
@@ -60,7 +60,7 @@ class Page1 extends Component {
                     changeAge
                 </button>
 
-                <Link to="/page2">page2</Link>
+                <Link to="/main/page2">page2</Link>
 
                 <Button type="primary">Button</Button>
 

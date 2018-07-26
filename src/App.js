@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 
 import { Provider } from 'mobx-react';
@@ -17,10 +18,9 @@ class App extends Component {
 		return (
 			<ErrorBoundary>
 				<Provider {...store}>
-					<Routers />
+					{Routers}
 				</Provider>
 			</ErrorBoundary>
-
 		);
 	}
 

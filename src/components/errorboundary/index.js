@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import fundebug from 'fundebug-javascript';
 
-fundebug.apikey = ""; // 填写 fundebug apikey
+fundebug.apikey = "20ff1979ca50f5a6c1d5a37e1624ded5867666ccbc5fd78afd88d684a6a9234b";
 
 class ErrorBoundary extends Component {
     constructor(props) {

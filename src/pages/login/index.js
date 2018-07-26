@@ -10,6 +10,7 @@ class Login extends Component {
         return (
             <div>
                 <p>hello login</p>
+                {/* {this.props.route.routes} */}
             </div>
         )
     }
